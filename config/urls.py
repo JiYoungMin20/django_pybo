@@ -15,12 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include #2024.03.14 include 추가
-from pybo import views # 2024.03.14 추가
+# from pybo import views # 2024.03.14 추가
+from pybo.views import base_views # 기존의 views.py 파일을 views 폴더를 만들어 분리함
 
 urlpatterns = [
-    path('', views.index, name='index'), # / 페이지에 해당하는 urlpatterns 2024.03.18
+    # path('', views.index, name='index'), # / 페이지에 해당하는 urlpatterns 2024.03.18
     path('admin/', admin.site.urls),
     # path('pybo/', views.index),  # 2024.03.14 추가
     path('pybo/', include('pybo.urls')), # 2024.03.14 URL 분리하기
     path('common/', include('common.urls')), # 2024.03.18 common/urls.py 파일로 유도
+    path('', base_views.index, name='index'), # views 대신에 base_views 로 변경
 ]

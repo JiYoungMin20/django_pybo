@@ -7,3 +7,9 @@ input[type=submit] {
     margin-top : 10px;
 }
 */
+
+/* 2024.03.20 commment 클래스의 CSS 작성 */
+.comment {
+    border-top:dotted 1px #ddd;
+    font-size:0.7em;
+}
