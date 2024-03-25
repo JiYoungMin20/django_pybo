@@ -31,7 +31,6 @@ DEBUG = True
 # 개발용 local 과 서비스용 AWS IP 주소 분리
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
