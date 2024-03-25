@@ -28,6 +28,7 @@ SECRET_KEY = 'bu((6_s-%y4$00%4!k74bf_gb&*e)$$=9epa!+g!29)ab9!cmk'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# 개발용 local 과 서비스용 AWS IP 주소 분리
 ALLOWED_HOSTS = []
 
 
