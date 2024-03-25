@@ -29,7 +29,8 @@ SECRET_KEY = 'bu((6_s-%y4$00%4!k74bf_gb&*e)$$=9epa!+g!29)ab9!cmk'
 DEBUG = True
 
 # 개발용 local 과 서비스용 AWS IP 주소 분리
-ALLOWED_HOSTS = []
+# 2024.03.26 aws 고정 IP 추가 하는 방법으로 변경해 봄
+ALLOWED_HOSTS = ['43.200.48.35']
 
 # Application definition
 
