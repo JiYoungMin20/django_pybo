@@ -24,5 +24,7 @@ urlpatterns = [
     # path('pybo/', views.index),  # 2024.03.14 추가
     path('pybo/', include('pybo.urls')), # 2024.03.14 URL 분리하기
     path('common/', include('common.urls')), # 2024.03.18 common/urls.py 파일로 유도
-    path('', base_views.index, name='index'), # views 대신에 base_views 로 변경
+    path('', base_views.index, name='index'), # '/'에 해당하는 path. views 대신에 base_views 로 변경
 ]
+
+handler404 = 'common.views.page_not_found'
