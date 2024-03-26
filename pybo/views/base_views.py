@@ -4,12 +4,15 @@ from django.db.models import Q, Count # 검색 기능, 정렬 카운트
 
 from ..models import Question
 
+import logging
+logger = logging.getLogger('pybo')
+
 # 2014.03.14 추가
 def index(request) :
+    logger.info("INFO 레벨로 촐력")
     """
     pybo 목록 출력
     """
-    3/0
     # 입력 인자
     page = request.GET.get('page', '1')   # 페이지
     kw = request.GET.get('kw', '')        # 검색
