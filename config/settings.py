@@ -16,7 +16,8 @@ from pathlib import Path
 # BASE_DIR = Path(__file__).resolve().parent.parent
 
 # 2024.03.25 config/settings.py --> config/settings/base.py 로 이동하고 BASE_DIR 수정함
-BASE_DIR = Path(__file__).resolve().parent.parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent
+# BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 
 # Quick-start development settings - unsuitable for production
@@ -26,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 SECRET_KEY = 'bu((6_s-%y4$00%4!k74bf_gb&*e)$$=9epa!+g!29)ab9!cmk'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # 개발용 local 과 서비스용 AWS IP 주소 분리
 # 2024.03.26 aws 고정 IP 추가 하는 방법으로 변경해 봄
@@ -79,10 +80,21 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'pybo',
+        'USER': 'dbmasteruser',
+        'PASSWORD': '}.nER7DQK?l:RYGT~5ha;4Jq,As?-Cwh',
+        'HOST': 'ls-d2b48d1fbffd300a1820eb8add1208caf309a059.c7wiak6ag4yg.ap-northeast-2.rds.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
@@ -141,6 +153,9 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT = BASE_DIR / 'pybo/static/'
+
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
